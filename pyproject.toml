@@ -10,7 +10,7 @@ dependencies = [
 ]
 
 [project.scripts]
-moltbot = "moltbot.cli:main"
+moltbot-python = "moltbot.cli:main"
 
 [build-system]
 requires = ["setuptools>=68"]
