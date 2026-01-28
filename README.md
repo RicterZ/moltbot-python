@@ -1,31 +1,27 @@
 # Moltbot Python SDK
 
-Repository: `git@github.com:RicterZ/moltbot-python.git` (branch: `main`)
-
 A lightweight Python SDK + CLI for the Moltbot Gateway WebSocket. It performs the full `connect` handshake (device identity + nonce signing) and exposes RPC helpers such as `chat.send`, `chat.abort`, `chat.history`, `sessions.list`, and `status`. The CLI can stream chat events or run an interactive REPL.
 
 ## Prerequisites
 
 - Python 3.11+
-- `pip install -e .` from this `sdk/` directory (installs `websockets` + `cryptography` and exposes the `moltbot` entrypoint).
 
 ## Quick start
 
 ```bash
-cd sdk
-python -m pip install -e .
+poetry install
 
 # Show gateway status
-moltbot status --url ws://127.0.0.1:18789 --token "$GATEWAY_TOKEN"
+moltbot-python status --url ws://127.0.0.1:18789 --token "$GATEWAY_TOKEN"
 
 # Send a chat message and stream events until completion
-moltbot chat-send --session my-session --message "Hello" --token "$GATEWAY_TOKEN"
+moltbot-python chat-send --session my-session --message "Hello" --token "$GATEWAY_TOKEN"
 
 # Interactive chat loop (prints final text for each turn)
-moltbot interactive --session my-session --token "$GATEWAY_TOKEN"
+moltbot-python interactive --session my-session --token "$GATEWAY_TOKEN"
 
 # Tail all gateway events
-moltbot listen --token "$GATEWAY_TOKEN"
+moltbot-python listen --token "$GATEWAY_TOKEN"
 ```
 
 Flags:
