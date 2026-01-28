@@ -1,0 +1,20 @@
+[project]
+name = "moltbot"
+version = "0.1.0"
+description = "Python SDK and CLI for the Moltbot Gateway WebSocket"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "websockets>=12,<13",
+  "cryptography>=42,<43",
+]
+
+[project.scripts]
+moltbot = "moltbot.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
